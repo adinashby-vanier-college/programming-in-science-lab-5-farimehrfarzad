@@ -7,11 +7,20 @@
 def hollow_square(n):
     if n < 1:
         return ""
-    result = "*" * n + "\n"
-    for _ in range(n - 2):
-        result += "*" + " " * (n - 2) + "*\n"
-    if n > 1:
-        result += "*" * n
+    
+    result = ""
+    i = 0
+    while i < n:
+        if i == 0 or i == n - 1:
+            result += "*" * n
+        else:
+            result += "*" + " " * (n - 2) + "*"
+        
+        if i != n - 1:
+            result += "\n"
+        
+        i += 1
+    
     return result
     
 # 1
@@ -39,9 +48,19 @@ def sum_of_natural_numbers(n):
 #  *****
 # *******
 def centered_star_pyramid(n):
+    if n < 1:
+        return ""
+    
     result = ""
-    for i in range(n):
+    i = 0
+    while i < n:
         spaces = " " * (n - i - 1)
         stars = "*" * (2 * i + 1)
-        result += spaces + stars + "\n"
-    return result.strip()
+        result += spaces + stars
+        
+        if i != n - 1:
+            result += "\n"
+        
+        i += 1
+    
+    return result
