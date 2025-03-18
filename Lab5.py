@@ -13,7 +13,7 @@ def hollow_square(n):
     if n > 1:
         result += "*" * n
     return result
-
+    
 # 1
 # 12
 # 123
